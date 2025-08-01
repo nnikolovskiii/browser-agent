@@ -10,7 +10,7 @@ from src.agent.core.configs import web_explore_plan_action
 web_graph = web_explore_plan_action().compile()
 
 # Define a web browsing task
-user_task = """Search for information about 'langchain agents' and summarize the first result."""
+user_task = """go to linkedin and login"""
 
 config = RunnableConfig(recursion_limit=250)
 

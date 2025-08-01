@@ -11,7 +11,7 @@ from .ai_models import kimi_llm, deepseek_llm, gemini_flash_lite, gemini_flash
 from .state import State
 from ..prompts.prompts import final_context_instruction, make_plan_instruction, input_type_determination_prompt, answer_question_prompt, web_agent_instruction
 from ..tools.file_utils import get_project_structure_as_string, concat_files_in_str
-from ..tools.browser_tools import goto_url, get_page_content, web_tools_by_name
+from ..tools.browser_tools import goto_url_helper, get_page_content, web_tools_by_name
 from ..models.models import FileReflectionList, SearchFilePathsList, InputType
 from ..prompts.prompts import file_planner_instructions, file_reflection_instructions
 
@@ -188,10 +188,10 @@ async def initialize_web_browser(state: State):
     start_url = "https://duckduckgo.com/"
 
     # Navigate to the starting URL
-    result = await goto_url.ainvoke(start_url)
+    result = await goto_url_helper(start_url)
 
     # Get the initial page content
-    page_content = await get_page_content.ainvoke("")
+    page_content = await get_page_content("")
 
     return {
         "current_url": start_url,
@@ -208,24 +208,13 @@ async def web_agent_action(state: State):
     current_url = state.get("current_url", "")
     page_content = state.get("page_content", "")
     plan = state.get("plan", "")
-    current_step = state.get("current_step", "")
     action_history = state.get("action_history", "")
 
-    # Get the current step and previous steps
-    steps = state.get("steps", [])
-    current_step_index = state.get("current_step_index", 0)
-
-    if steps and current_step_index < len(steps):
-        current_step = steps[current_step_index].description
-
-    # Get only the messages for the current step
+    # Get all messages
     all_messages = state.get("messages", [])
-    step_message_indices = state.get("step_message_indices", {})
-    start_index = step_message_indices.get(current_step_index, 0)
-    current_step_messages = all_messages[start_index:]
 
-    # Update action history with current step messages
-    current_messages_history = "\n".join([str(msg) for msg in current_step_messages])
+    # Update action history with messages
+    current_messages_history = "\n".join([str(msg) for msg in all_messages])
 
     # Get the latest page content before invoking the LLM
     from ..tools.browser_tools import web_tools, get_page_content, browser_session
@@ -234,7 +223,7 @@ async def web_agent_action(state: State):
     if browser_session._initialized and browser_session.page:
         current_url = browser_session.page.url
 
-    latest_page_content = await get_page_content.ainvoke(current_url)
+    latest_page_content = await get_page_content(current_url)
 
     # Format the web agent instruction with the current state and latest page content
     instruction = web_agent_instruction.format(
@@ -242,7 +231,7 @@ async def web_agent_action(state: State):
         current_url=current_url,
         page_content=latest_page_content,
         plan=plan,
-        current_step=current_step,
+        current_step="",  # No steps, using the plan directly
         action_history=action_history + "\n" + current_messages_history
     )
 

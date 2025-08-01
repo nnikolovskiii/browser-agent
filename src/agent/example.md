@@ -1,28 +1,22 @@
-Step-by-step plan to search for “langchain agents” and summarize the first result:
+Step-by-step plan to log in to LinkedIn:
 
-1. Choose a search interface  
-   a. If a web browser is available, open it.  
-   b. If only a file system or API is available, use a search API or local search index.
+1. Navigate to LinkedIn  
+   - Open a web browser.  
+   - Enter the URL `https://www.linkedin.com`.
 
-2. Formulate the query  
-   a. Enter or send the exact phrase: `langchain agents`.
+2. Locate the sign-in option  
+   - On the landing page, click “Sign in” (usually in the upper-right corner).
 
-3. Execute the search  
-   a. Submit the query via the chosen interface.  
-   b. Wait for the results page or response.
+3. Enter credentials  
+   - Type your registered email address or phone number into the “Email or Phone” field.  
+   - Type your password into the “Password” field.
 
-4. Identify the first result  
-   a. Locate the top-ranked link or entry.  
-   b. Note its title and URL (or file path if local).
+4. Submit the form  
+   - Click the “Sign in” button.
 
-5. Retrieve the content  
-   a. Click the link or fetch the resource.  
-   b. Load the full text of the page/document.
+5. Handle two-factor authentication (if prompted)  
+   - Retrieve the verification code from your chosen method (SMS, authenticator app, or email).  
+   - Enter the code in the provided field and submit.
 
-6. Summarize the content  
-   a. Read the introduction and section headings.  
-   b. Extract key points: definition, purpose, core components, and any code examples.  
-   c. Condense into 3–5 concise sentences.
-
-7. Output the summary  
-   a. Present the summary in plain text.
+6. Confirm successful login  
+   - Verify that your profile photo or account menu appears, indicating you are logged in.

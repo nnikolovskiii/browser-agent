@@ -150,15 +150,13 @@ def web_explore_plan_action():
     Creates a graph for a web browsing agent that:
     1. Initializes the web browser
     2. Makes a plan
-    3. Segments the plan into steps
-    4. Executes the steps using web tools
+    3. Executes the plan using web tools
     """
     graph = StateGraph(State)
 
     # Add nodes for web browsing
     graph.add_node("initialize_web_browser", initialize_web_browser)
     graph.add_node("make_plan", make_plan)
-    graph.add_node("segment_into_steps", segment_into_steps)
     graph.add_node("web_agent_action", web_agent_action)
     graph.add_node("tool_node", tool_node)
     graph.add_node("next_step", next_step)
@@ -166,8 +164,7 @@ def web_explore_plan_action():
     # Start with initializing the web browser
     graph.add_edge(START, "initialize_web_browser")
     graph.add_edge("initialize_web_browser", "make_plan")
-    graph.add_edge("make_plan", "segment_into_steps")
-    graph.add_edge("segment_into_steps", "web_agent_action")
+    graph.add_edge("make_plan", "web_agent_action")
 
     # Add conditional edges for the web agent's action
     graph.add_conditional_edges(
