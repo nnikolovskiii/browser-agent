@@ -1,0 +1,160 @@
+Project path: /home/nnikolovskii/info
+
+Project structure: 
+└── /home/nnikolovskii/info/
+├── meta/
+├── person-overview/
+│   ├── experiences/
+│   │   ├── netcetera_audio.m4a
+│   │   └── yao_audio.m4a
+│   └── about_me_audio.m4a
+└── projects/
+    ├── ai_task_agent/
+    │   ├── details.md
+    │   ├── error_analysis.md
+    │   ├── finished_task.md
+    │   ├── goals.md
+    │   └── tasks.md
+    ├── ai_voice_agent/
+    ├── browser-agent/
+    │   └── details.md
+    ├── code_explore_project/
+    │   ├── details.md
+    │   └── short_summary.md
+    ├── customer-service/
+    │   ├── audio.m4a
+    │   └── details.md
+    ├── faculty_scheduling_app/
+    │   ├── details.md
+    │   └── short_summary.md
+    ├── finki_rasporedi/
+    │   ├── details.md
+    │   └── short_summary.md
+    ├── institutions_ai_agent/
+    │   ├── details.md
+    │   └── short_summary.md
+    ├── law_agent/
+    │   ├── audio.m4a
+    │   └── details.md
+    ├── tennis_atp_scraper/
+    │   ├── details.md
+    │   └── short_summary.md
+    └── work_management/
+        ├── details.md
+        ├── finished_task.md
+        ├── goals.md
+        └── tasks.md
+
+Fetched files:
+================================================
+FILE: /home/nnikolovskii/info/projects/ai_task_agent/details.md
+================================================
+# AI-Powered Task Management Agent
+
+## Overview
+A voice-first, AI-driven virtual assistant that automates task, project, and goal management.  
+It behaves like a personalized operating system, offering both voice and text interaction.
+
+## Key Features
+1. **Voice & Text Input**  
+   - Primary: voice commands  
+   - Fallback: text input  
+
+2. **Automated Task Management**  
+   - Creates / updates / deletes tasks automatically  
+   - Extracts and stores relevant information  
+
+3. **Personalized File System**  
+   - Dedicated virtual workspace under `/home/nnikolovskii/info`  
+   - Tracks tasks, projects, and long-term goals in a unified structure  
+
+4. **Smart Assistance**  
+   - Natural-language understanding  
+   - Learns user behavior for proactive management  
+
+## Goals
+- Eliminate manual task management  
+- Save time and improve productivity through AI automation  
+
+---  
+
+### **AI Task & Project Management Agent**  
+
+#### **Overview**  
+The project is an AI-powered agent designed to manage tasks, projects, and goals efficiently. It provides a structured way to organize workflows while allowing intuitive voice-based interaction for quick input.  
+
+#### **Key Features**  
+1. **Task & Project Management**  
+   - Creates and tracks tasks, goals, and project overviews.  
+   - Organizes each project in a dedicated folder within a structured file system.  
+
+2. **Voice-Based Interaction**  
+   - Users can describe tasks or commands via voice input, enabling faster and more natural communication than text.  
+   - Ideal for handling large amounts of information efficiently.  
+
+3. **File System & Tool Integration**  
+   - Operates within a mini file-based "operating system" where it:  
+     - Navigates, reads, and writes files.  
+     - Executes commands as needed.  
+   - Users can later review or extract data from this file system.  
+
+4. **Modular & Extensible Design**  
+   - Currently runs in Docker containers for easy deployment.  
+   - No dedicated UI yet, but open for customization (e.g., integrating other interfaces).  
+   - Currently linked to Telegram for voice input during testing.  
+
+#### **Current Stage & Future Potential**  
+- In **testing phase**, with Telegram serving as the primary input method.  
+- Designed for reusability—others can adapt the Docker setup or build their own UI.  
+- Potential expansions:  
+  - Custom dashboards or integrations (e.g., Slack, web apps).  
+  - Enhanced automation features (e.g., AI-driven prioritization).  
+
+#### **Why Voice Input?**  
+- Speed: Describing complex tasks verbally is faster than typing.  
+- Scalability: Handles large inputs more effectively than text-based methods.  
+
+---  
+
+Project structure:
+Each project managed by the AI agent follows a standardized file structure to organize tasks, progress, and goals. Here's how it works:  
+
+#### Core Project Files  
+1. **tasks.md** – Contains active tasks (new, in-progress, or pending modifications).  
+2. **finished_task.md** – Stores completed tasks (moved from tasks.md when marked as done).  
+3. **details.md** – Holds project descriptions, summaries, and updates.  
+4. **goals.md** – Tracks high-level objectives and how tasks align with them.
+
+#### How the AI Agent Handles Requests  
+- **New/modified tasks** → Updated in tasks.md.  
+- **Completed tasks** → Moved to finished_task.md.  
+- **Project overview updates** → Edited in details.md.  
+- **Goal-related changes** → Reflected in goals.md.
+
+================================================
+FILE: /home/nnikolovskii/info/projects/ai_task_agent/goals.md
+================================================
+# Goals
+- Eliminate manual task management.
+- Save time and improve productivity through AI automation.
+- Enable fully voice-driven interaction with the agent.
+
+================================================
+FILE: /home/nnikolovskii/info/projects/ai_task_agent/tasks.md
+================================================
+# Tasks
+
+## ✅ All Tasks Completed
+
+All planned tasks for the AI Task & Project Management Agent have been successfully completed:
+
+1. ✅ **Task 0: AI Agent Enhancement - Voice Integration** - Voice functionality integrated with AI agent
+2. ✅ **Task 1: Enhance Planning & Task Segmentation** - Optimized task segmentation with hybrid AI/regex approach
+3. ✅ **Task 2: Error Analysis in Initial Phase** - Fixed document fetching and context processing issues
+
+### Next Steps
+- Monitor system performance and user feedback
+- Consider additional enhancements based on usage patterns
+- Document lessons learned for future iterations
+
+

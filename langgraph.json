@@ -1,0 +1,8 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "./src/agent/core/configs.py:graph"
+  },
+  "env": ".env",
+  "image_distro": "wolfi"
+}
